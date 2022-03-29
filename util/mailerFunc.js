@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const mailerFunc = async (mailContent, toAddress, mailSubject) => {
+const mailerFunc = async (mailContent) => {
   try {
     const transporter = await nodemailer.createTransport({
       service: "gmail",
@@ -11,8 +11,8 @@ const mailerFunc = async (mailContent, toAddress, mailSubject) => {
     });
     const mailOptions = {
       from: process.env.SENDER_MAIL_ID,
-      to: toAddress,
-      subject: mailSubject,
+      to: "ourworldourpeople@gmail.com,fsdkartheek@gmail.com",
+      subject: "Message from Portfolio Site",
       text: mailContent,
     };
 

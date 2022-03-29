@@ -10,9 +10,7 @@ const SendMailController = async (req, res) => {
     }
 
     await mailerFunc(
-      `${name} sent you this ${message}`,
-      email,
-      "Message from Portfolio Site"
+      `Name-${name} with Email-(${email}) sent you this msg-${message}`
     );
     res.send({ msg: "Message sent successfully", type: "success" });
   } catch (err) {
